@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="阀门流量系数测试实验记录, Jirachi&#39;s Starlight">
+    <meta name="keywords" content="工作中的CREO小事儿, Jirachi&#39;s Starlight">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>阀门流量系数测试实验记录 | Jirachi&#39;s Starlight</title>
+    <title>工作中的CREO小事儿 | Jirachi&#39;s Starlight</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -417,12 +417,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/008.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/012.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">阀门流量系数测试实验记录</h1>
+                    <h1 class="description center-align post-title">工作中的CREO小事儿</h1>
                 </div>
             </div>
         </div>
@@ -554,7 +554,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-10-13
+                    2021-11-26
                 </div>
                 
 
@@ -575,51 +575,99 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="实验流程"><a href="#实验流程" class="headerlink" title="实验流程"></a>实验流程</h2><ol>
-<li>打开全部电源，检查每个部件是否亮起指示灯</li>
-<li>打开空气压缩机，填充管内空气，以备下一步调节管路位置</li>
-<li>在管路和被测水流阀门的连接处，加入润滑剂（顺滑膏）加强密封效果，降低磨损</li>
-<li>为水阀门洗内芯的尘土，并保证清洁</li>
-<li>为阀门和管路中心保证完美对齐，以保证测量的精确性（如对不正会影响流阻系数）</li>
-<li>加上加固螺丝（四角），防止高压水流让水阀爆开</li>
-<li>注意！对角线加固会更稳定，而且更贴合。使用两轮加固法，先松拧再使用工具加固</li>
-<li>离开管道室，回到控制台。总控台需要调整【自/手动、差压/流量、是否打开特定阀门、选择指定流量计和通路】</li>
-<li>开始测试，使用低功率增压机做第一次测试。</li>
-<li>使用不同的流量、进行三到四次重复实验，如20-40-60-80。</li>
-<li>更换管道进行测试，DN80，DN50 （DN65使用的较少）</li>
+                <p>It has been a loooog time since last time I wrote blog!</p>
+<p>好久不见！本来计划着想要每周记录我的绿绿生活的，但是人总是懒惰的。不知不觉，已经接近三个月的实习时光了，直到今日，我依然没有过一秒钟想要过离开呢。是一个我非常喜欢的工作了！</p>
+<p>这里是久违的技术文档，记录一下做过的和遇到过的CREO相关小问题。</p>
+<h2 id="管路图与实验室绘制"><a href="#管路图与实验室绘制" class="headerlink" title="管路图与实验室绘制"></a>管路图与实验室绘制</h2><p>进入岗位的第一个任务是3D模型化整个测试实验室，包括流量测试的管路图。</p>
+<p>在这次任务里，上来就难住了我的是管路图的1D线图绘制。这个的解决方法是需要工业级的CREO插件，很显然我不能获得这个插件。</p>
+<h3 id="管路图"><a href="#管路图" class="headerlink" title="管路图"></a>管路图</h3><p>于是我选择自己绘制管路图（Pipe drawing）：</p>
+<ol>
+<li>设置管道数据</li>
 </ol>
-<h3 id="问题出现与解决"><a href="#问题出现与解决" class="headerlink" title="问题出现与解决"></a>问题出现与解决</h3><ul>
-<li>第一次测量Kv非常高，与产品报告值相差甚远<ul>
-<li>第二次测量时为水流开关通电，先用工具调整水流开关的开合程度，通电后使其自动回到<strong>全开状态</strong></li>
+<ul>
+<li>尺寸 - piping data - master_category - pipe - csv</li>
+<li>弯折 - bend</li>
+<li>回弹和延长值 - springback</li>
+<li>折弯制造 - machine</li>
+<li>斜接值 – clamp-length (夹具长度)/ arc-through</li>
 </ul>
+<ol start="2">
+<li>导入新管道</li>
+</ol>
+<ul>
+<li>设定工作文件夹</li>
+<li>定义 spec DB</li>
+<li>Route Pipe - Set Start</li>
+<li>Display thick pipe - 然后设定</li>
+</ul>
+<ol start="3">
+<li>连接管道</li>
+</ol>
+<ul>
+<li>可加入各种阀门（选择位置）</li>
+</ul>
+<p>悲伤的是，单纯绘制管路图并不足以满足整个实验室的3D模型重建，所以这个方法就暂时被放弃了。</p>
+<h3 id="横截面截图和多切角的内腔截图"><a href="#横截面截图和多切角的内腔截图" class="headerlink" title="横截面截图和多切角的内腔截图"></a>横截面截图和多切角的内腔截图</h3><p>这是一个看起来很炫酷但是并不难的技能。可以把一个内部结构很复杂的物体，在某个角度切开，并且展示出里面的内容还不破坏原本的外壳图样。</p>
+<p>步骤：</p>
+<ol>
+<li>在横截面（Section）里面选择zone （区域）</li>
+<li>设定平面、参考区域 - 可以按（一个回旋的标志）更改“相对这个面的方向”</li>
+<li>在Manage View 中激活/ 可改define</li>
+</ol>
+<p>在这个炫酷的方法学习了之后，我们开始下一个常用的操作，就是列阵和镜像。</p>
+<h3 id="镜像，阵列与复制粘贴、特殊粘贴"><a href="#镜像，阵列与复制粘贴、特殊粘贴" class="headerlink" title="镜像，阵列与复制粘贴、特殊粘贴"></a>镜像，阵列与复制粘贴、特殊粘贴</h3><ol>
+<li>复制粘贴与特殊粘贴</li>
+</ol>
+<ul>
+<li>复制粘贴： 选中一个extrude - copy - paste， 在普通复制粘贴下可以选择想要粘贴的具体位置，但是注意<strong>参考坐标轴</strong>的选择非常重要。</li>
+<li>特殊粘贴： 可以选择基于原图的移动位置和旋转角度，<strong>准确度高，但是自由度低</strong>。</li>
+<li>可用点击文件名，全体复制</li>
+</ul>
+<ol start="2">
+<li>镜像</li>
+</ol>
+<ul>
+<li>点击元素 - mirror - 设定一个额外的平面 （注意：必须是这个零件activate时的平面，不能是其他assembly中存在的平面） - 常用于柜子两侧图案轴对称</li>
+</ul>
+<ol start="3">
+<li>阵列</li>
+</ol>
+<p>最常用的一个技能，可以快速填满一整个平面。</p>
+<ul>
+<li>Direction： 顺着边缘，对于某一个面，同一方向的多元素复制</li>
+<li>Dimension： <em>较为复杂</em>， 针对某一个、多个尺寸进行<strong>递增</strong>，<strong>递减</strong> ，然后针对尺寸的延续方向排列。</li>
+<li>Axis： 按照设定的轴进行旋转，可以选择个数</li>
+<li>Fill： 最简单的填满一整个面的方法 有各种不同的图案 星，六边形，正方形等</li>
+</ul>
+<p>掌握了这些技术后，基本实验室A的温控箱、桌椅、工作台就都可以绘制了。</p>
+<h3 id="扫描路径"><a href="#扫描路径" class="headerlink" title="扫描路径"></a>扫描路径</h3><ol>
+<li>Sweep</li>
+</ol>
+<ul>
+<li>使用Sweep非常适合绘制形状复杂且有很多弯角的管路</li>
+<li><strong>先针对水平方向</strong>画出管路的中心线，然后再画横截面</li>
+</ul>
+<p>实验室B的管路图基本都是用Pattern 和 Sweep 两个技能一起完成的。</p>
+<h3 id="画个小弹簧"><a href="#画个小弹簧" class="headerlink" title="画个小弹簧"></a>画个小弹簧</h3><p>这是一个闲暇时间的娱乐小项目，但是有着特殊的技巧。</p>
+<ol>
+<li>定义方程</li>
+</ol>
+<ul>
+<li>l = 0.5  # 0.5 是螺距</li>
+<li>x = 2 * cos(t (20*360))  # 2是半径， 20 是总圈数， 360 是一圈的度数</li>
+<li>y = 2 * sin(t (20*360))  </li>
+<li>z = 20 * l * t    </li>
+</ul>
+<ol start="2">
+<li><p>在中心截面上画钩</p>
 </li>
-<li>第二次测量Kv依然非常高，检查对比数据后发现，可能问题源自于直管段差压较高<ul>
-<li>拔下所有水管使其和大气连通，回到控制台检查直管段差压是否降到0，再次测量</li>
-</ul>
+<li><p><em>一定要保证钩子和螺旋体是个封闭图形</em>， curve - from point - [End condition - tangent]。 使用tangent 函数做出来的是，较为平滑的连接曲线。</p>
 </li>
-<li>第三次测量Kv还是远高于报告值，开始怀疑<em>组装上的人为误差</em><ul>
-<li>拉开空气压缩机，将管路缩回到初始状态，重复水流阀门的安装阶段，注意找平和对齐，还有加固方法</li>
-</ul>
+<li><p>画出截面的圆圈</p>
 </li>
-<li>本次测量Kv仍然不符合预期流量系数，找到下一个原因，<em>进气管中有较长的空气柱</em><ul>
-<li>拆开空气管放气，使之联通大气压后，再接回到原来的接口</li>
-</ul>
+<li><p><strong>全选弹簧体</strong> - generate</p>
 </li>
-</ul>
-<p>在本次纠错之后，流量系数成功回到预计范围内。问题解决，达成了阀门流量、流阻系数的测试。</p>
-<h3 id="用到的公式"><a href="#用到的公式" class="headerlink" title="用到的公式"></a>用到的公式</h3><p>雷诺数：</p>
-<p>Re = v * d / u</p>
-<p>which v is average flow speed (m/s)</p>
-<p>平均流速：</p>
-<p>v = 4 * Q / pi * d^2</p>
-<p>which Q is flow rate （水流量） （m^3/s)</p>
-<p><strong>净差压</strong>：</p>
-<p>p_v = p_1 - p_2</p>
-<p>which p_1 is 阀门前后取压点差压<br>    p_2 is 实验管道直管差压</p>
-<p><em>流量系数</em>：</p>
-<p>$K_v = 10 * Q * \sqrt(\rho /(p_v * \rho_0))$</p>
-<p><em>流量系数Cv</em>：</p>
-<p>C_v = 1.156 * K_v</p>
+</ol>
 
                 
             </div>
@@ -646,7 +694,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/10/13/valveTesting/">http://example.com/2021/10/13/valveTesting/</a>
+                    <a href="http://example.com/2021/11/26/technote1/">http://example.com/2021/11/26/technote1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -855,9 +903,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/11/26/technote1/">
                     <div class="card-image">
@@ -875,9 +924,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -886,6 +935,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -904,13 +954,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/25/REBT%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
+                <a href="/2021/10/13/valveTesting/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/017.jpg" class="responsive-img" alt="Rational Emotive Behaviour Therapy - 阅读记录">
+                        <img src="/medias/featureimages/008.jpg" class="responsive-img" alt="阀门流量系数测试实验记录">
                         
-                        <span class="card-title">Rational Emotive Behaviour Therapy - 阅读记录</span>
+                        <span class="card-title">阀门流量系数测试实验记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -921,7 +971,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-13
                             </span>
                         <span class="publish-author">
                             
@@ -934,8 +984,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Psychology/">
-                        <span class="chip bg-color">Psychology</span>
+                    <a href="/tags/Material/">
+                        <span class="chip bg-color">Material</span>
                     </a>
                     
                 </div>
