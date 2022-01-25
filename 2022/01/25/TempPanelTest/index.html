@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Jirachi&#39;s Starlight">
+    <meta name="keywords" content="温度控制面板测试流程, Jirachi&#39;s Starlight">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Jirachi&#39;s Starlight</title>
+    <title>温度控制面板测试流程 | Jirachi&#39;s Starlight</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -417,12 +417,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/012.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/019.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">温度控制面板测试流程</h1>
                 </div>
             </div>
         </div>
@@ -536,9 +536,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Material/">
+                                <span class="chip bg-color">Material</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -550,7 +554,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-08-30
+                    2022-01-25
                 </div>
                 
 
@@ -571,19 +575,76 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="温度控制面板测试流程"><a href="#温度控制面板测试流程" class="headerlink" title="温度控制面板测试流程"></a>温度控制面板测试流程</h1><ol>
+<li>使用Fluck高精度环境温度测试仪（Thermometer Readout）准确得出所在环境的温度值</li>
+</ol>
+<p>e.g. 19.323 Celsius Degree</p>
+<ol start="2">
+<li><p>拆开Schneider温度控制面板（3D打印的初版磨具） 按照原理图接上右一右二(+ and -)</p>
+</li>
+<li><p>读取Manual说明书，确定环境温度测试范围，和设定温度范围</p>
+</li>
+</ol>
+<p>e.g. Ambient Temp (0,50)  Set Temp (5,25)</p>
+<ol start="4">
+<li>接通DC Power Supply， 检查显示的环境温度，对比精准温度源</li>
+</ol>
+<p>e.g. 20.5 C</p>
+<ol start="5">
+<li>接通Temp and GND (ground), 使用万用表测试输出电压值，根据温度范围和显示值，比对模拟信号电压是否正确</li>
+</ol>
+<p>e.g. 20 C ambient Temp 0-10V analog range</p>
+<p>$\frac{20}{50} \times 10 = 4 V$</p>
+<p>模拟信号输出应该在4V左右</p>
+<ol start="6">
+<li>同理，接通Set and GND, 改变设定值，用万用表测试电压值</li>
+</ol>
+<p>e.g. 15 C Set Temp 0-10V analog range</p>
+<p>$\delta$(15-5)/(25-5) * 10 = 5 V</p>
+<p>模拟信号输出应该在5V左右</p>
+<ol start="7">
+<li>重复测试，并记录表格。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Reference Temp</th>
+<th>19.3</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Amb Temp Range</td>
+<td>Amb Voltage Range</td>
+<td>Set Temp Range</td>
+<td>Set Voltage Range</td>
+</tr>
+<tr>
+<td>0-50</td>
+<td>0-10</td>
+<td>5-25</td>
+<td>0-10</td>
+</tr>
+<tr>
+<td>Ambient Temp</td>
+<td>Ambient Analog</td>
+<td>Set Temp</td>
+<td>Set Analog</td>
+</tr>
+<tr>
+<td>20.4</td>
+<td>4.071</td>
+<td>20</td>
+<td>5.133</td>
+</tr>
+<tr>
+<td>21.5</td>
+<td>4.55</td>
+<td>19.3</td>
+<td>4.7</td>
+</tr>
+</tbody></table>
 
                 
             </div>
@@ -610,7 +671,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/30/hello-world/">http://example.com/2021/08/30/hello-world/</a>
+                    <a href="http://example.com/2022/01/25/TempPanelTest/">http://example.com/2022/01/25/TempPanelTest/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -647,7 +708,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/Material/">
+                                    <span class="chip bg-color">Material</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -815,17 +880,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/08/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">
+                <a href="/2022/01/25/TempPanelTest/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/011.jpg" class="responsive-img" alt="学一学Markdown">
+                        <img src="/medias/featureimages/019.jpg" class="responsive-img" alt="温度控制面板测试流程">
                         
-                        <span class="card-title">学一学Markdown</span>
+                        <span class="card-title">温度控制面板测试流程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -835,9 +901,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -846,6 +912,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -861,16 +928,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/30/hello-world/">
+                <a href="/2021/12/22/PsychologyReading2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/012.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/006.jpg" class="responsive-img" alt="Self-Compasion Skills - 阅读记录">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Self-Compasion Skills - 阅读记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -881,7 +948,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-22
                             </span>
                         <span class="publish-author">
                             
@@ -891,7 +958,14 @@
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Psychology/">
+                        <span class="chip bg-color">Psychology</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
