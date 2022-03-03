@@ -595,12 +595,15 @@
 <li>遇到圆环应用Face Meshing - 改变internal No. of Div &gt;2</li>
 <li>Mesh Quality Improvement: -加入body sizing (mesh size, defeature size) - Error limit: Aggressive Mesh - Target Quality: 0.3 - Smoothing: High</li>
 <li>Display - Direction： 决定了Bias的走向，注意对称边要翻转一侧bias才能保证轴对称画网格</li>
+<li>在网格绘制中，圆环可用Face Meshing，但应注意网格的长宽比，越接近正方形，计算越准确。</li>
+<li>在运用MultiZone方法是，可额外设定Surface Mesh Method - Pave 以便在弯折处有更好的表现；也可加入Mapped Mesh Type - Hexa来最大限度获得正方形网格。</li>
 </ul>
 <p><img src="https://s2.loli.net/2022/02/24/eCW4HJiYkczEXgs.png" alt="Mesh.png"></p>
 <h2 id="Contact"><a href="#Contact" class="headerlink" title="Contact"></a>Contact</h2><ol>
 <li>可以设定两个面的接触方式，其中Bonded加入pinball可以设定<em>检测的接触范围</em>，若pinball半径大于两个面的间隙，可被认定为是接触。</li>
 <li>当两个面本身为接触的时候，系统默认为是No separation.</li>
 <li>Frictional 模式下可以定义摩擦系数，然后加入其它系数后（如Stefan-boltzmann 定律），可以计算摩擦生热</li>
+<li>在Contact选择时，可以在Auto Detection中的Tolerance Value中设定阈值，并在SpaceClaim中测量最小间隔，从而让电脑不“过量”连接面与面、体与体。</li>
 </ol>
 <p><strong>重点</strong>：</p>
 <ul>
